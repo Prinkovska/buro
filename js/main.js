@@ -110,6 +110,18 @@
     });
   }
 
+  /* ---------- стрічка страв: фото вантажимо, лише коли стрічка близько до екрана ---------- */
+  (function () {
+    var box = $('.dishes');
+    if (!box) return;
+    function fill() { $$('img[data-src]', box).forEach(function (i) { i.src = i.dataset.src; delete i.dataset.src; }); }
+    if (!('IntersectionObserver' in window)) { fill(); return; }
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { fill(); io.disconnect(); }
+    }, { rootMargin: '800px 0px' });
+    io.observe(box);
+  })();
+
   /* ---------- безкінечні стрічки: дублюємо вміст ---------- */
   $$('.iconbelt__track, .dishes__track').forEach(function (t) {
     var kids = [].slice.call(t.children);
@@ -514,7 +526,7 @@
       built();
     }
 
-    if (finSrc) { new Image().src = finSrc; }
+    // фінальний кадр підвантажуємо разом зі стартом відео (див. start)
     // повільний інтернет (2G/3G): одразу фінальний кадр, без 2–3 МБ відео
     var slow = !!(navigator.connection && /(^|-)(2g|3g)$/.test(navigator.connection.effectiveType || ''));
     if (!src || reduceMotion || saveData || slow) { stillOnly(); return; }
@@ -527,16 +539,22 @@
     video.addEventListener('ended', showFinal);
     video.addEventListener('error', showFinal);
 
-    video.preload = 'auto';
-    video.src = src;
-    var p = video.play();
-    if (p && p.catch) p.catch(function () { stillOnly(); });
+    // відео стартує після завантаження сторінки, щоб не забирати канал у першого кадру й фото
+    function start() {
+      if (finSrc) { new Image().src = finSrc; }
+      video.preload = 'auto';
+      video.src = src;
+      var p = video.play();
+      if (p && p.catch) p.catch(function () { stillOnly(); });
 
-    setTimeout(function () {
-      if (started) return;
-      if (finSrc) { video.removeAttribute('src'); video.load(); showFinal(); }
-      else built();
-    }, 2500);
+      setTimeout(function () {
+        if (started) return;
+        if (finSrc) { video.removeAttribute('src'); video.load(); showFinal(); }
+        else built();
+      }, 2500);
+    }
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start, { once: true });
   })();
 
   /* ---------- фінальний блок: двері відчиняються один раз ---------- */

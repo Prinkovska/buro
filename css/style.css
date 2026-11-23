@@ -1061,3 +1061,6 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 
 /* телефон: фото в ряду «Про шефа» вищі, щоб не різати голови */
 @media (max-width:820px){.media-row .ph--real{min-height:0;aspect-ratio:4/3}.media-row .ph--real img{object-position:50% 25%}}
+
+/* телефон: легша версія фото кухні у фоні блоку франшизи */
+@media (max-width:820px){.sec--photo::before{background-image:url("../media/photos/kitchen-work-m.webp")}}
