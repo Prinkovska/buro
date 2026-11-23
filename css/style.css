@@ -1054,3 +1054,7 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
   .faq-cloche h2{clip-path:none;transition:none}
   .faq-wrap:has(.faq-cloche) .faq__item{opacity:1;transform:none;transition:none}
 }
+
+/* перший екран: головна кнопка рожева — колір блоку «Франшиза» (--brick, #91413C) */
+.hero__btns .btn--primary{background:var(--brick);color:#FBF3EE}
+.hero__btns .btn--primary:hover{filter:brightness(1.16)}
