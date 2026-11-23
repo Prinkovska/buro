@@ -17,10 +17,9 @@
 <meta property="og:image:height" content="630">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- Unbounded — шрифт заголовків -->
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="media/chef.png" fetchpriority="high">
+<!-- усі шрифти одним запитом: Commissioner (текст), IBM Plex Mono (позначки), Unbounded (заголовки), Caveat (рукописні) -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Commissioner:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="media/chef.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-hfont="unbounded">
@@ -61,22 +60,22 @@
        На телефоні (до 820px) беруться вертикальні версії з data-*-mobile. -->
   <section class="hero" aria-label="Заклад під ключ">
     <video class="hero__video" muted playsinline preload="none" aria-hidden="true"
-           data-poster="media/hero-first.jpg" data-poster-mobile="media/hero-first-mobile.jpg"
+           data-poster="media/hero-first.webp" data-poster-mobile="media/hero-first-mobile.webp"
            data-src="media/hero.mp4" data-src-mobile="media/hero-mobile.mp4"></video>
-    <img class="hero__final" alt="" aria-hidden="true" data-src="media/hero-final.jpg" data-src-mobile="media/hero-final-mobile.jpg">
+    <img class="hero__final" alt="" aria-hidden="true" data-src="media/hero-final.webp" data-src-mobile="media/hero-final-mobile.webp">
     <div class="hero__grade" aria-hidden="true"></div>
 
-    <img class="hero__chef" src="media/chef.png" width="800" height="1200"
+    <img class="hero__chef" src="media/chef.webp" width="800" height="1200"
          alt="Андрій Петренко, шеф-технолог, стоїть зі схрещеними руками" fetchpriority="high">
     <div class="hero__shade" aria-hidden="true"></div>
 
     <!-- відкриті заклади (вигадані для портфоліо): картка в лівому нижньому куті, фото змінюються самі (на телефоні прихована) -->
     <a class="opened" href="#zaklady" aria-label="Відкриті заклади: дивитися всі">
       <span class="opened__pics">
-        <img class="is-on" src="media/photos/thumbs/susidska.jpg" width="200" height="200" alt="" decoding="async">
-        <img class="" src="media/photos/thumbs/bulka.jpg" width="200" height="200" alt="" decoding="async">
-        <img class="" src="media/photos/thumbs/tisto.jpg" width="200" height="200" alt="" decoding="async">
-        <img class="" src="media/photos/thumbs/temna.jpg" width="200" height="200" alt="" decoding="async">
+        <img class="is-on" src="media/photos/thumbs/susidska.webp" width="200" height="200" alt="" decoding="async">
+        <img class="" src="media/photos/thumbs/bulka.webp" width="200" height="200" alt="" decoding="async">
+        <img class="" src="media/photos/thumbs/tisto.webp" width="200" height="200" alt="" decoding="async">
+        <img class="" src="media/photos/thumbs/temna.webp" width="200" height="200" alt="" decoding="async">
       </span>
       <span class="opened__text">
         <span class="opened__label">Вже відкриті</span>
@@ -190,7 +189,7 @@
 
     <div class="reel__track">
       <div class="reel__stage">
-        <video class="reel__video" muted playsinline preload="none" aria-hidden="true" poster="media/steps3-first.jpg" data-src="media/steps3-scrub.mp4" data-src-mobile="media/steps3-scrub-mobile.mp4"></video>
+        <video class="reel__video" muted playsinline preload="none" aria-hidden="true" poster="media/steps3-first.webp" data-src="media/steps3-scrub.mp4" data-src-mobile="media/steps3-scrub-mobile.mp4"></video>
         <!-- чіткі кадри k1–k6: показуються, коли етап зупинився (відео з генератора лише 720p) -->
         <div class="reel__stills" aria-hidden="true">
           <picture><source media="(max-width: 820px)" srcset="media/steps3/k1-m.webp"><img class="reel__still" src="media/steps3/k1.webp" alt="" loading="lazy" decoding="async" width="1920" height="1072"></picture>
@@ -290,7 +289,7 @@
     <div class="wrap about">
       <figure class="about__photo" data-reveal>
         <div class="about__frame" data-parallax="-0.06">
-          <img src="media/photos/chef-portrait.jpg" width="733" height="1100" loading="lazy" alt="Андрій Петренко, шеф-технолог, у білому кітелі">
+          <img src="media/photos/chef-portrait.webp" width="733" height="1100" loading="lazy" alt="Андрій Петренко, шеф-технолог, у білому кітелі">
         </div>
         <img class="about__ring-logo" src="media/logo.png" width="261" height="160" alt="" aria-hidden="true" loading="lazy">
         <svg class="about__ring" viewBox="0 0 200 200" aria-hidden="true">
@@ -324,9 +323,9 @@
 
       <div class="media-row">
         <!-- Три фото з роботи: гриль, навчання команди, дегустація -->
-        <figure class="ph ph--photo ph--real" data-reveal><img src="media/photos/chef-work.jpg" width="900" height="900" loading="lazy" alt="Андрій Петренко біля гриля на кухні, у руках щипці, на грилі риба й стейки"><figcaption class="ph__cap"><b>На кухні</b>гриль на роздачі, руки в роботі</figcaption></figure>
-        <figure class="ph ph--photo ph--real" data-reveal style="--d:1"><img src="media/photos/chef-team.jpg" width="900" height="900" loading="lazy" alt="Андрій Петренко показує молодим кухарям подачу страви, вони записують"><figcaption class="ph__cap"><b>З командою</b>навчання персоналу на об’єкті</figcaption></figure>
-        <figure class="ph ph--photo ph--real" data-reveal style="--d:2"><img src="media/photos/dish-coconut.jpg" loading="lazy" alt="Тартар у половинці кокоса"><figcaption class="ph__cap"><b>Дегустація меню</b>страва, яку затвердили з першої спроби</figcaption></figure>
+        <figure class="ph ph--photo ph--real" data-reveal><img src="media/photos/chef-work.webp" width="900" height="900" loading="lazy" alt="Андрій Петренко біля гриля на кухні, у руках щипці, на грилі риба й стейки"><figcaption class="ph__cap"><b>На кухні</b>гриль на роздачі, руки в роботі</figcaption></figure>
+        <figure class="ph ph--photo ph--real" data-reveal style="--d:1"><img src="media/photos/chef-team.webp" width="900" height="900" loading="lazy" alt="Андрій Петренко показує молодим кухарям подачу страви, вони записують"><figcaption class="ph__cap"><b>З командою</b>навчання персоналу на об’єкті</figcaption></figure>
+        <figure class="ph ph--photo ph--real" data-reveal style="--d:2"><img src="media/photos/dish-coconut.webp" loading="lazy" alt="Тартар у половинці кокоса"><figcaption class="ph__cap"><b>Дегустація меню</b>страва, яку затвердили з першої спроби</figcaption></figure>
       </div>
 
       <div class="cta-row cta-row--dark" data-reveal>
@@ -347,7 +346,7 @@
       <!-- Проєкти вигадані для портфоліо, фото згенеровані -->
       <div class="cases">
         <article class="case" data-reveal>
-          <div class="case__img"><img src="media/photos/case-susidska.jpg" width="1200" height="750" loading="lazy" alt="Кафе «Сусідська кухня» на першому поверсі ЖК увечері, гості за столиками"><span class="stamp stamp--case"><span>відкрито</span></span></div>
+          <div class="case__img"><img src="media/photos/case-susidska.webp" width="1200" height="750" loading="lazy" alt="Кафе «Сусідська кухня» на першому поверсі ЖК увечері, гості за столиками"><span class="stamp stamp--case"><span>відкрито</span></span></div>
           <div class="case__body">
             <h3>Сусідська кухня</h3>
             <p class="case__meta">кафе при ЖК · Київ, Осокорки</p>
@@ -356,7 +355,7 @@
           </div>
         </article>
         <article class="case" data-reveal style="--d:1">
-          <div class="case__img"><img src="media/photos/case-bulka.jpg" width="1200" height="750" loading="lazy" alt="Бургерна «Булка і Жар» у старому будинку Львова, вікно видачі і гості біля нього"><span class="stamp stamp--case"><span>відкрито</span></span></div>
+          <div class="case__img"><img src="media/photos/case-bulka.webp" width="1200" height="750" loading="lazy" alt="Бургерна «Булка і Жар» у старому будинку Львова, вікно видачі і гості біля нього"><span class="stamp stamp--case"><span>відкрито</span></span></div>
           <div class="case__body">
             <h3>Булка і Жар</h3>
             <p class="case__meta">бургерна, 3 локації · Львів</p>
@@ -365,7 +364,7 @@
           </div>
         </article>
         <article class="case" data-reveal>
-          <div class="case__img"><img src="media/photos/case-tisto.jpg" width="1200" height="750" loading="lazy" alt="Кухар розкачує тісто для пасти біля вікна паста-бару «Тісто»"><span class="stamp stamp--case"><span>відкрито</span></span></div>
+          <div class="case__img"><img src="media/photos/case-tisto.webp" width="1200" height="750" loading="lazy" alt="Кухар розкачує тісто для пасти біля вікна паста-бару «Тісто»"><span class="stamp stamp--case"><span>відкрито</span></span></div>
           <div class="case__body">
             <h3>Тісто</h3>
             <p class="case__meta">паста-бар · Одеса</p>
@@ -374,7 +373,7 @@
           </div>
         </article>
         <article class="case" data-reveal style="--d:1">
-          <div class="case__img"><img src="media/photos/case-temna.jpg" width="1200" height="750" loading="lazy" alt="Кухня доставки «Темна кухня 24»: кухарі пакують замовлення, кур’єр забирає пакети"><span class="stamp stamp--case"><span>відкрито</span></span></div>
+          <div class="case__img"><img src="media/photos/case-temna.webp" width="1200" height="750" loading="lazy" alt="Кухня доставки «Темна кухня 24»: кухарі пакують замовлення, кур’єр забирає пакети"><span class="stamp stamp--case"><span>відкрито</span></span></div>
           <div class="case__body">
             <h3>Темна кухня 24</h3>
             <p class="case__meta">dark kitchen доставки · Дніпро</p>
@@ -411,15 +410,15 @@
     <div class="dishes" aria-label="Страви з меню, які розробляв Андрій Петренко">
       <p class="dishes__cap">Страви з меню, які я розробляв</p>
       <div class="dishes__track">
-        <figure><img src="media/photos/dish-burger.jpg" loading="lazy" alt="Чорний бургер з беконом"></figure>
-        <figure><img src="media/photos/dish-shrimp.jpg" loading="lazy" alt="Креветки на білій тарілці з камінцями"></figure>
-        <figure><img src="media/photos/dish-coconut.jpg" loading="lazy" alt="Тартар у половинці кокоса"></figure>
-        <figure><img src="media/photos/dish-duck.jpg" loading="lazy" alt="Качина ніжка з ягідним соусом і грушею"></figure>
-        <figure><img src="media/photos/dish-mussels.jpg" loading="lazy" alt="Мідії, подані з димом"></figure>
-        <figure><img src="media/photos/dish-pasta.jpg" loading="lazy" alt="Паста з креветками і песто"></figure>
-        <figure><img src="media/photos/dish-brie.jpg" loading="lazy" alt="Сир на грилі з вишневим соусом"></figure>
-        <figure><img src="media/photos/dish-canape.jpg" loading="lazy" alt="Фуршетні закуски з креветками"></figure>
-        <figure><img src="media/photos/dish-skewers.jpg" loading="lazy" alt="Шашлички в лаваші на дошці"></figure>
+        <figure><img src="media/photos/dish-burger.webp" loading="lazy" alt="Чорний бургер з беконом"></figure>
+        <figure><img src="media/photos/dish-shrimp.webp" loading="lazy" alt="Креветки на білій тарілці з камінцями"></figure>
+        <figure><img src="media/photos/dish-coconut.webp" loading="lazy" alt="Тартар у половинці кокоса"></figure>
+        <figure><img src="media/photos/dish-duck.webp" loading="lazy" alt="Качина ніжка з ягідним соусом і грушею"></figure>
+        <figure><img src="media/photos/dish-mussels.webp" loading="lazy" alt="Мідії, подані з димом"></figure>
+        <figure><img src="media/photos/dish-pasta.webp" loading="lazy" alt="Паста з креветками і песто"></figure>
+        <figure><img src="media/photos/dish-brie.webp" loading="lazy" alt="Сир на грилі з вишневим соусом"></figure>
+        <figure><img src="media/photos/dish-canape.webp" loading="lazy" alt="Фуршетні закуски з креветками"></figure>
+        <figure><img src="media/photos/dish-skewers.webp" loading="lazy" alt="Шашлички в лаваші на дошці"></figure>
       </div>
     </div>
   </section>
@@ -579,17 +578,17 @@
   <!-- ============ 9. ФІНАЛЬНА ФОРМА ============ -->
   <section class="sec final" id="konsultatsiya">
     <!-- Відео «двері відчиняються» (Higgsfield, декор): грає один раз, коли блок з'являється на екрані,
-         і зупиняється на відчинених дверях (door-open.jpg = останній кадр відео). -->
+         і зупиняється на відчинених дверях (door-open.webp = останній кадр відео). -->
     <div class="final__bg" aria-hidden="true">
-      <video class="final__video" muted playsinline preload="none" poster="media/door-closed.jpg" data-src="media/door.mp4"></video>
-      <img class="final__still" alt="" data-src="media/door-open.jpg">
+      <video class="final__video" muted playsinline preload="none" poster="media/door-closed.webp" data-src="media/door.mp4"></video>
+      <img class="final__still" alt="" data-src="media/door-open.webp">
     </div>
     <div class="wrap final__grid">
       <div class="final__text">
         <h2 data-split>Готові зустріти першого гостя?</h2>
         <p class="sec__lead" data-reveal>Розкажіть про свою ідею. Я передзвоню, поставлю кілька питань і скажу, з чого почати і на яку суму орієнтуватися.</p>
         <div class="final__chef" data-reveal>
-          <img src="media/photos/chef-portrait.jpg" alt="" width="72" height="72" loading="lazy">
+          <img src="media/photos/chef-portrait.webp" alt="" width="72" height="72" loading="lazy">
           <span><b>Андрій Петренко</b>шеф-технолог</span>
         </div>
       </div>

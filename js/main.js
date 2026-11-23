@@ -515,7 +515,9 @@
     }
 
     if (finSrc) { new Image().src = finSrc; }
-    if (!src || reduceMotion || saveData) { stillOnly(); return; }
+    // повільний інтернет (2G/3G): одразу фінальний кадр, без 2–3 МБ відео
+    var slow = !!(navigator.connection && /(^|-)(2g|3g)$/.test(navigator.connection.effectiveType || ''));
+    if (!src || reduceMotion || saveData || slow) { stillOnly(); return; }
 
     var started = false;
     video.addEventListener('playing', function () { started = true; });
